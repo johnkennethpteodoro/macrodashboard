@@ -11,6 +11,7 @@ export const useStore = defineStore({
 			profile: false,
 			employees: false,
 		} as Modules,
+		searchProject: "",
 	}),
 	actions: {
 		handleShowModule(value: string) {

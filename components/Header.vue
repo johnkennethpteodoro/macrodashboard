@@ -16,7 +16,7 @@ const store = useStore();
 				class="mr-5"
 			/>
 			<div class="flex items-center">
-				<h6 class="mr-8">juan@strike.com</h6>
+				<h6 class="mr-4">juan@strike.com</h6>
 				<img
 					src="../public/profile.JPG"
 					class="object-contain object-center w-12 h-12 bg-gray-500 border border-black rounded-full"

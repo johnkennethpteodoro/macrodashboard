@@ -82,6 +82,11 @@ const birthdayCelebrants = {
 				<div class="items-center py-7 px-7">
 					<h6 class="font-semibold">Announcement</h6>
 				</div>
+				<div class="flex">
+					<Announcement />
+					<Announcement />
+					<Announcement />
+				</div>
 			</div>
 			<div class="justify-center rounded bg-gray-50 dark:bg-gray-800">
 				<div class="flex items-center px-7 py-7">
