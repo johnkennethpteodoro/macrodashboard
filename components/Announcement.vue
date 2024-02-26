@@ -3,10 +3,9 @@
 <template>
 	<div class="px-5 pb-7">
 		<div class="border border-gray-300 rounded">
-			<img
+			<NuxtImg
 				src="../public/profile.JPG"
 				class="object-cover object-center w-full h-32 p-2"
-				alt=""
 			/>
 			<div class="p-4">
 				<h6 class="text-xl">Employee Portal</h6>

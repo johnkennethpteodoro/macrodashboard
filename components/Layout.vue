@@ -11,6 +11,8 @@ const store = useStore();
 	<Dahsboard class="p-4 sm:ml-64" v-if="store.modules.dashboard" />
 	<Attendance class="p-4 sm:ml-64" v-else-if="store.modules.attendance" />
 	<Project class="p-4 sm:ml-64" v-else-if="store.modules.project" />
+	<Profile class="p-4 sm:ml-64" v-else-if="store.modules.profile" />
+	<Employees class="p-4 sm:ml-64" v-else-if="store.modules.employees" />
 </template>
 
 <style scoped></style>

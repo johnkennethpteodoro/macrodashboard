@@ -75,7 +75,6 @@ const searchProject = computed(() => {
 				<NuxtImg
 					src="../public/profile.JPG"
 					class="object-cover object-center w-full h-40"
-					alt=""
 				/>
 				<div>
 					<div class="flex justify-between mt-5">
