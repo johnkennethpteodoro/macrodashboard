@@ -7,25 +7,25 @@ const projectDetail = {
 	project1: {
 		id: 1,
 		projectName: "vectorsoft",
-		status: "under maintenanc",
+		status: "under maintenance",
 		rate: 5,
 	},
 	project2: {
 		id: 2,
 		projectName: "desgin studio",
-		status: "under maintenanc",
+		status: "opearational",
 		rate: 5,
 	},
 	project3: {
 		id: 3,
 		projectName: "brand data import",
-		status: "under maintenanc",
+		status: "inprogress",
 		rate: 5,
 	},
 	project4: {
 		id: 4,
 		projectName: "qx7",
-		status: "under maintenanc",
+		status: "completed",
 		rate: 5,
 	},
 };
@@ -65,7 +65,9 @@ const searchProject = computed(() => {
 			</div>
 		</div>
 	</div>
-	<div class="grid grid-cols-2 gap-4 mb-4">
+	<div
+		class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-2 lg:grid lg:grid-cols-1 md:grid md:grid-cols-1 sm:grid sm:grid-cols-1"
+	>
 		<div
 			v-for="project in searchProject"
 			:key="project.id"
@@ -73,8 +75,8 @@ const searchProject = computed(() => {
 		>
 			<div class="p-5">
 				<NuxtImg
-					src="../public/profile.JPG"
-					class="object-cover object-center w-full h-40"
+					src="../public/designStudio.png"
+					class="object-cover object-center w-full h-auto border border-gray-300"
 				/>
 				<div>
 					<div class="flex justify-between mt-5">

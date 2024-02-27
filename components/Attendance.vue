@@ -100,10 +100,10 @@ const attendanceLogs = {
 </script>
 
 <template>
-	<div class="p-4 sm:ml-64">
-		<div class="grid grid-cols-3 gap-4 mb-4">
+	<div>
+		<div class="gap-4 mb-4">
 			<div
-				class="items-center justify-center col-span-2 rounded bg-gray-50 dark:bg-gray-800 p-7"
+				class="items-center justify-center col-span-1 rounded bg-gray-50 dark:bg-gray-800 p-7"
 			>
 				<div class="flex justify-between w-full">
 					<div class="items-center">
@@ -114,9 +114,11 @@ const attendanceLogs = {
 						Leave request
 					</button>
 				</div>
-				<div class="flex w-full gap-5 mt-7">
+				<div
+					class="grid w-full grid-cols-1 gap-5 mt-7 xl:grid xl:grid-cols-6 lg:grid lg:grid-cols-6 md:grid md:grid-cols-6 sm:grid sm:grid-cols-6"
+				>
 					<div
-						class="w-full py-16 text-center text-white rounded bg-slate-950"
+						class="w-full py-16 text-center text-white rounded bg-slate-950 xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-3"
 						:class="{ 'opacity-20': setOpacity }"
 					>
 						<div class="flex justify-center mb-5">
@@ -128,7 +130,11 @@ const attendanceLogs = {
 							/>
 							<h6 class="text-xl font-extrabold">TIME IN</h6>
 						</div>
-						<h6 class="text-4xl">{{ currentDateTimeIn.time }}</h6>
+						<h6
+							class="text-5xl font-extrabold xl:font-extrabold xl:text-5xl lg:text-4xl md:text-4xl md:font-extrabold sm:text-3xl sm:font-extrabold lg:font-extrabold"
+						>
+							{{ currentDateTimeIn.time }}
+						</h6>
 						<p class="text-lg font-thin">{{ currentDateTimeIn.day }}</p>
 						<button
 							@click="handleClockIn"
@@ -139,7 +145,7 @@ const attendanceLogs = {
 						</button>
 					</div>
 					<div
-						class="w-full py-16 text-center text-black border border-black rounded bg-whte"
+						class="w-full py-16 text-center text-black border border-black rounded bg-whte xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-3"
 						:class="{ 'opacity-20': !setOpacity }"
 					>
 						<div class="flex justify-center mb-5">
@@ -151,7 +157,11 @@ const attendanceLogs = {
 							/>
 							<h6 class="text-xl font-extrabold">TIME OUT</h6>
 						</div>
-						<h6 class="text-4xl">{{ currentDateTimeOut.time }}</h6>
+						<h6
+							class="text-5xl font-extrabold xl:font-extrabold xl:text-5xl lg:text-4xl md:text-4xl md:font-extrabold sm:text-3xl sm:font-extrabold lg:font-extrabold"
+						>
+							{{ currentDateTimeOut.time }}
+						</h6>
 						<p class="text-lg font-thin">{{ currentDateTimeOut.day }}</p>
 						<button
 							@click="handleClockOut"
@@ -163,7 +173,66 @@ const attendanceLogs = {
 					</div>
 				</div>
 			</div>
-			<div>
+		</div>
+
+		<div class="gap-4 xl:grid xl:grid-cols-6">
+			<div
+				class="relative mb-4 overflow-x-auto bg-white rounded sm:rounded-lg dark:bg-gray-800 xl:col-span-4"
+			>
+				<div class="flex items-center justify-between py-7 px-7">
+					<h6 class="font-semibold">Attendance Logs</h6>
+					<div class="flex items-center">
+						<h6 class="mr-5 font-semibold">Month</h6>
+						<button class="h-10 px-4 text-sm text-white rounded bg-slate-950">
+							February
+							<Icon
+								name="solar:alt-arrow-down-line-duotone"
+								color="white"
+								size="16px"
+								class="ml-2"
+							/>
+						</button>
+					</div>
+				</div>
+				<table
+					class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400"
+				>
+					<thead
+						class="text-xs text-gray-700 bg-slate-50 dark:bg-gray-700 dark:text-gray-400"
+					>
+						<tr>
+							<th scope="col" class="px-6 py-3">Date</th>
+							<th scope="col" class="px-6 py-3">
+								<div class="flex items-center">Time In</div>
+							</th>
+							<th scope="col" class="px-6 py-3">
+								<div class="flex items-center">Time Out</div>
+							</th>
+							<th scope="col" class="px-6 py-3">
+								<div class="flex items-center">Time Rendered</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr
+							v-for="attendance in attendanceLogs"
+							:key="attendance.id"
+							class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+						>
+							<th
+								scope="row"
+								class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+							>
+								{{ attendance.date }}
+							</th>
+							<td class="px-6 py-4">{{ attendance.date }}</td>
+							<td class="px-6 py-4">{{ attendance.date }}</td>
+							<td class="px-6 py-4">{{ attendance.date }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="xl:col-span-2">
 				<div class="flex items-center justify-between px-4 py-4">
 					<h6 class="font-semibold">Recent Leaves</h6>
 					<button class="px-4 py-2 text-sm text-white rounded bg-slate-950">
@@ -231,59 +300,6 @@ const attendanceLogs = {
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="relative mb-4 overflow-x-auto bg-white rounded sm:rounded-lg dark:bg-gray-800">
-			<div class="flex items-center justify-between py-7 px-7">
-				<h6 class="font-semibold">Attendance Logs</h6>
-				<div class="flex items-center">
-					<h6 class="mr-5 font-semibold">Month</h6>
-					<button class="h-10 px-4 text-sm text-white rounded bg-slate-950">
-						February
-						<Icon
-							name="solar:alt-arrow-down-line-duotone"
-							color="white"
-							size="16px"
-							class="ml-2"
-						/>
-					</button>
-				</div>
-			</div>
-			<table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
-				<thead
-					class="text-xs text-gray-700 bg-slate-50 dark:bg-gray-700 dark:text-gray-400"
-				>
-					<tr>
-						<th scope="col" class="px-6 py-3">Date</th>
-						<th scope="col" class="px-6 py-3">
-							<div class="flex items-center">Time In</div>
-						</th>
-						<th scope="col" class="px-6 py-3">
-							<div class="flex items-center">Time Out</div>
-						</th>
-						<th scope="col" class="px-6 py-3">
-							<div class="flex items-center">Time Rendered</div>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr
-						v-for="attendance in attendanceLogs"
-						:key="attendance.id"
-						class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-					>
-						<th
-							scope="row"
-							class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-						>
-							{{ attendance.date }}
-						</th>
-						<td class="px-6 py-4">{{ attendance.date }}</td>
-						<td class="px-6 py-4">{{ attendance.date }}</td>
-						<td class="px-6 py-4">{{ attendance.date }}</td>
-					</tr>
-				</tbody>
-			</table>
 		</div>
 	</div>
 </template>

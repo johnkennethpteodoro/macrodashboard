@@ -4,12 +4,12 @@
 	<div class="px-5 pb-7">
 		<div class="border border-gray-300 rounded">
 			<NuxtImg
-				src="../public/profile.JPG"
-				class="object-cover object-center w-full h-32 p-2"
+				src="../public/employeeportal.png"
+				class="object-cover object-center w-full h-auto p-2"
 			/>
 			<div class="p-4">
 				<h6 class="text-xl">Employee Portal</h6>
-				<p class="text-xs">Last Edited: 2 days ago</p>
+				<p class="text-xs text-gray-400">Last Edited: 2 days ago</p>
 
 				<p class="text-sm mt-7">
 					The employee portal helps you quickly find HR forms, book company facilities,

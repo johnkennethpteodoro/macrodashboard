@@ -10,7 +10,10 @@ const hanldeClickModule = (value: string) => {
 <template>
 	<div class="h-full overflow-y-auto bg-slate-950">
 		<div class="pt-5 px-7">
-			<button class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm">
+			<button
+				@click="() => hanldeClickModule('dashboard')"
+				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm"
+			>
 				<Icon
 					name="material-symbols:incomplete-circle"
 					color="white"
@@ -23,7 +26,8 @@ const hanldeClickModule = (value: string) => {
 		<div class="px-4 py-4">
 			<button
 				@click="() => hanldeClickModule('dashboard')"
-				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm"
+				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm hover:bg-slate-500"
+				:class="{ active: store.modules.dashboard === true }"
 			>
 				<Icon
 					name="material-symbols:space-dashboard"
@@ -34,7 +38,8 @@ const hanldeClickModule = (value: string) => {
 			</button>
 			<button
 				@click="() => hanldeClickModule('attendance')"
-				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm"
+				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm hover:bg-slate-500"
+				:class="{ active: store.modules.attendance === true }"
 			>
 				<Icon
 					name="material-symbols:calendar-clock"
@@ -45,13 +50,15 @@ const hanldeClickModule = (value: string) => {
 			</button>
 			<button
 				@click="() => hanldeClickModule('project')"
-				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm"
+				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm hover:bg-slate-500"
+				:class="{ active: store.modules.project === true }"
 			>
 				<Icon name="material-symbols:files" color="white" size="24px" class="mr-5" />Project
 			</button>
 			<button
 				@click="() => hanldeClickModule('profile')"
-				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm"
+				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm hover:bg-slate-500"
+				:class="{ active: store.modules.profile === true }"
 			>
 				<Icon
 					name="material-symbols:person-rounded"
@@ -62,7 +69,8 @@ const hanldeClickModule = (value: string) => {
 			</button>
 			<button
 				@click="() => hanldeClickModule('employees')"
-				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm"
+				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm hover:bg-slate-500"
+				:class="{ active: store.modules.employees === true }"
 			>
 				<Icon
 					name="material-symbols:group-rounded"
@@ -71,16 +79,12 @@ const hanldeClickModule = (value: string) => {
 					class="mr-5"
 				/>Employees
 			</button>
-			<!-- <button class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-sm">
-				<Icon
-					name="material-symbols:arrow-circle-left-outline-rounded"
-					color="white"
-					size="24px"
-					class="mr-5"
-				/>Logout
-			</button> -->
 		</div>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.active {
+	background-color: #475569;
+}
+</style>

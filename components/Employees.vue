@@ -24,7 +24,7 @@ const employeeDataOveriew = {
 </script>
 
 <template>
-	<div class="p-4 sm:ml-64"><OverviewCards :employeeData="employeeDataOveriew" /></div>
+	<div><OverviewCards :employeeData="employeeDataOveriew" /> <EmployeeDetail /></div>
 </template>
 
 <style scoped></style>

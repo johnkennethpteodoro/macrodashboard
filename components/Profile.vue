@@ -1,10 +1,10 @@
 <script setup></script>
 
 <template>
-	<div class="p-4 sm:ml-64">
+	<div>
 		<div class="grid grid-cols-1 mb-4">
 			<div class="rounded bg-gray-50 dark:bg-gray-800">
-				<div class="rounded-t h-28 bg-slate-950"></div>
+				<div class="rounded-t h-36 bg-slate-950"></div>
 				<div class="flex justify-center">
 					<NuxtImg
 						src="../public/profile.JPG"
@@ -17,7 +17,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="grid grid-cols-3 gap-4 mb-4">
+		<div
+			class="grid grid-cols-1 gap-4 mb-4 capitalize xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:grid-cols-1 sm:grid sm:grid-cols-1"
+		>
 			<div class="flex items-center justify-start rounded bg-gray-50 dark:bg-gray-800">
 				<div class="block text-left p-7">
 					<h1 class="text-3xl font-medium">120</h1>
@@ -37,7 +39,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="grid grid-cols-3 gap-4 mb-4">
+		<div
+			class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:grid-cols-1 sm:grid sm:grid-cols-1"
+		>
 			<div class="rounded bg-gray-50 dark:bg-gray-800 py-7 px-7">
 				<div class="items-center">
 					<h6 class="font-semibold">Personal Information</h6>

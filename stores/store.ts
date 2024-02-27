@@ -12,6 +12,7 @@ export const useStore = defineStore({
 			employees: false,
 		} as Modules,
 		searchProject: "",
+		searchEmployee: "",
 	}),
 	actions: {
 		handleShowModule(value: string) {

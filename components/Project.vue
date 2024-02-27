@@ -24,7 +24,7 @@ const projectOverviewData = {
 </script>
 
 <template>
-	<div class="p-4 sm:ml-64">
+	<div>
 		<OverviewCards :projectData="projectOverviewData" />
 		<ProjectDetail />
 	</div>
