@@ -103,14 +103,16 @@ const attendanceLogs = {
 	<div>
 		<div class="gap-4 mb-4">
 			<div
-				class="items-center justify-center col-span-1 rounded bg-gray-50 dark:bg-gray-800 p-7"
+				class="items-center justify-center col-span-1 rounded shadow-lg bg-gray-50 dark:bg-gray-800 p-7 shadow-gray-200"
 			>
 				<div class="flex justify-between w-full">
 					<div class="items-center">
 						<h6 class="text-xl font-extrabold">{{ currentDateTimeIn.time }}</h6>
 						<p class="-mt-1 text-sm leading-7">{{ currentDateTimeIn.day }}</p>
 					</div>
-					<button class="h-10 px-4 text-sm text-white rounded bg-slate-950">
+					<button
+						class="h-10 px-4 text-sm text-white rounded shadow-lg bg-slate-950 shadow-gray-200"
+					>
 						Leave request
 					</button>
 				</div>
@@ -118,7 +120,7 @@ const attendanceLogs = {
 					class="grid w-full grid-cols-1 gap-5 mt-7 xl:grid xl:grid-cols-6 lg:grid lg:grid-cols-6 md:grid md:grid-cols-6 sm:grid sm:grid-cols-6"
 				>
 					<div
-						class="w-full py-16 text-center text-white rounded bg-slate-950 xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-3"
+						class="w-full py-16 text-center text-white rounded shadow-lg bg-slate-950 shadow-gray-300 xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-3"
 						:class="{ 'opacity-20': setOpacity }"
 					>
 						<div class="flex justify-center mb-5">
@@ -141,11 +143,11 @@ const attendanceLogs = {
 							class="px-12 py-2 mt-24 text-lg text-white bg-red-600 rounded"
 							:disabled="setOpacity"
 						>
-							Clock In
+							CLOCK IN
 						</button>
 					</div>
 					<div
-						class="w-full py-16 text-center text-black border border-black rounded bg-whte xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-3"
+						class="w-full py-16 text-center text-black border border-black rounded shadow-lg shadow-gray-300 bg-whte xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-3"
 						:class="{ 'opacity-20': !setOpacity }"
 					>
 						<div class="flex justify-center mb-5">
@@ -168,7 +170,7 @@ const attendanceLogs = {
 							class="px-12 py-2 mt-24 text-lg text-white bg-red-600 rounded"
 							:disabled="!isClockedIn"
 						>
-							Clock Out
+							CLOCK OUT
 						</button>
 					</div>
 				</div>
@@ -177,13 +179,15 @@ const attendanceLogs = {
 
 		<div class="gap-4 xl:grid xl:grid-cols-6">
 			<div
-				class="relative mb-4 overflow-x-auto bg-white rounded sm:rounded-lg dark:bg-gray-800 xl:col-span-4"
+				class="relative mb-4 overflow-x-auto rounded shadow-lg bg-gray-50 shadow-gray-200 sm:rounded-lg dark:bg-gray-800 xl:col-span-4"
 			>
 				<div class="flex items-center justify-between py-7 px-7">
 					<h6 class="font-semibold">Attendance Logs</h6>
 					<div class="flex items-center">
 						<h6 class="mr-5 font-semibold">Month</h6>
-						<button class="h-10 px-4 text-sm text-white rounded bg-slate-950">
+						<button
+							class="h-10 px-4 text-sm text-white rounded shadow-lg bg-slate-950 shadow-gray-200"
+						>
 							February
 							<Icon
 								name="solar:alt-arrow-down-line-duotone"
@@ -235,7 +239,9 @@ const attendanceLogs = {
 			<div class="xl:col-span-2">
 				<div class="flex items-center justify-between px-4 py-4">
 					<h6 class="font-semibold">Recent Leaves</h6>
-					<button class="px-4 py-2 text-sm text-white rounded bg-slate-950">
+					<button
+						class="px-4 py-2 text-sm text-white rounded shadow-lg bg-slate-950 shadow-gray-200"
+					>
 						Sort By
 						<Icon
 							name="solar:alt-arrow-down-line-duotone"
@@ -245,13 +251,19 @@ const attendanceLogs = {
 						/>
 					</button>
 				</div>
-				<div class="mb-4 rounded bg-gray-50 dark:bg-gray-800 py-7">
+				<div
+					class="mb-4 rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 shadow-gray-200"
+				>
 					<div class="flex items-center justify-between mb-3 px-7">
 						<div>
 							<h6 class="text-lg">Going for a trip</h6>
 							<p class="text-xs text-gray-500">Vacation Leave</p>
 						</div>
-						<h6 class="px-3 py-1 text-sm text-white bg-green-700 rounded">Pending</h6>
+						<h6
+							class="px-3 py-1 text-sm text-white bg-green-700 rounded shadow-lg shadow-gray-200"
+						>
+							Pending
+						</h6>
 					</div>
 					<div class="flex items-center px-7">
 						<Icon
@@ -263,13 +275,19 @@ const attendanceLogs = {
 						<p class="text-xs">{{ currentDateTimeIn.day }}</p>
 					</div>
 				</div>
-				<div class="mb-4 rounded bg-gray-50 dark:bg-gray-800 py-7">
+				<div
+					class="mb-4 rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 shadow-gray-200"
+				>
 					<div class="flex items-center justify-between mb-3 px-7">
 						<div>
 							<h6 class="text-lg">Going for a trip</h6>
 							<p class="text-xs text-gray-500">Vacation Leave</p>
 						</div>
-						<h6 class="px-3 py-1 text-sm text-white bg-green-700 rounded">Pending</h6>
+						<h6
+							class="px-3 py-1 text-sm text-white bg-green-700 rounded shadow-lg shadow-gray-200"
+						>
+							Pending
+						</h6>
 					</div>
 					<div class="flex items-center px-7">
 						<Icon
@@ -281,13 +299,19 @@ const attendanceLogs = {
 						<p class="text-xs">{{ currentDateTimeIn.day }}</p>
 					</div>
 				</div>
-				<div class="mb-4 rounded bg-gray-50 dark:bg-gray-800 py-7">
+				<div
+					class="mb-4 rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 shadow-gray-200"
+				>
 					<div class="flex items-center justify-between mb-3 px-7">
 						<div>
 							<h6 class="text-lg">Going for a trip</h6>
 							<p class="text-xs text-gray-500">Vacation Leave</p>
 						</div>
-						<h6 class="px-3 py-1 text-sm text-white bg-green-700 rounded">Pending</h6>
+						<h6
+							class="px-3 py-1 text-sm text-white bg-green-700 rounded shadow-lg shadow-gray-200"
+						>
+							Pending
+						</h6>
 					</div>
 					<div class="flex items-center px-7">
 						<Icon

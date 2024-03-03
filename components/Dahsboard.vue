@@ -60,17 +60,37 @@ const birthdayCelebrants = {
 		name: "Tru Austin",
 		birthday: "Feb 29",
 	},
+	person7: {
+		id: 7,
+		name: "Kaisley Kelly",
+		birthday: "Feb 22",
+	},
+	person8: {
+		id: 8,
+		name: "Tru Austin",
+		birthday: "Feb 29",
+	},
+	person9: {
+		id: 9,
+		name: "Kaisley Kelly",
+		birthday: "Feb 22",
+	},
+	person10: {
+		id: 10,
+		name: "Tru Austin",
+		birthday: "Feb 29",
+	},
 };
 </script>
 
 <template>
 	<div>
 		<div
-			class="grid items-center grid-cols-6 mb-4 rounded xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-gray-50 dark:bg-gray-800"
+			class="grid items-center grid-cols-6 mb-4 rounded shadow-lg xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-gray-50 dark:bg-gray-800 shadow-gray-200"
 		>
 			<div class="h-full col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2">
 				<div class="pt-5 pb-5 pl-5 xl:p-8 lg:p-8 md:p-7 sm:p-5">
-					<h6 class="text-lg font-black xl:text-4xl lg:text-4xl md:text-2xl sm:text-lg">
+					<h6 class="font-black xl:text-4xl lg:text-4xl md:text-2xl sm:text-lg">
 						Juan Dela Cruz
 					</h6>
 					<p class="text-sm capitalize xl:text-lg lg:text-lg md:text-lg sm:text-sm">
@@ -79,7 +99,7 @@ const birthdayCelebrants = {
 
 					<button
 						@click="() => hanldeClickModule('attendance')"
-						class="px-5 py-2 text-white bg-red-600 rounded mt-7"
+						class="px-5 py-2 text-white bg-red-600 rounded shadow-lg mt-7 shadow-gray-200"
 					>
 						Clock In
 					</button>
@@ -111,10 +131,18 @@ const birthdayCelebrants = {
 			class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-6 md:grid md:col-span-6 sm:grid sm:col-span-6"
 		>
 			<div
-				class="rounded xl:col-span-3 lg:col-span-4 md:col-span-3 bg-gray-50 dark:bg-gray-800 sm:col-span-3"
+				class="rounded shadow-lg xl:col-span-3 lg:col-span-4 md:col-span-3 bg-gray-50 dark:bg-gray-800 sm:col-span-3 shadow-gray-200"
 			>
 				<div class="items-center py-7 px-7">
-					<h6 class="font-semibold">Announcement</h6>
+					<h6 class="flex items-center font-semibold">
+						<Icon
+							name="material-symbols:sound-detection-loud-sound-sharp"
+							color="black"
+							size="24px"
+							class="mr-2"
+						/>
+						Announcement
+					</h6>
 				</div>
 				<div class="block xl:flex lg:block md:block sm:block">
 					<Announcement />
@@ -136,7 +164,7 @@ const birthdayCelebrants = {
 						class="flex items-center py-1.5 px-7"
 					>
 						<h6
-							class="p-2 mr-4 text-xs font-bold text-white capitalize rounded bg-slate-950"
+							class="p-2 mr-4 text-xs font-bold text-white capitalize rounded shadow-lg bg-slate-950 shadow-gray-200"
 						>
 							{{ celebrants.birthday }}
 						</h6>

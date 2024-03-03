@@ -2,7 +2,7 @@
 
 <template>
 	<div class="px-5 pb-7">
-		<div class="border border-gray-300 rounded">
+		<div class="border border-gray-300 rounded shadow-lg shadow-gray-100">
 			<NuxtImg
 				src="../public/employeeportal.png"
 				class="object-cover object-center w-full h-auto p-2"
@@ -15,7 +15,9 @@
 					The employee portal helps you quickly find HR forms, book company facilities,
 					and get answers to common questions.
 				</p>
-				<button class="px-5 py-2 text-white bg-red-600 rounded mt-7 text-md">
+				<button
+					class="px-5 py-2 text-white bg-red-600 rounded shadow-lg mt-7 text-md shadow-gra"
+				>
 					Read More
 				</button>
 			</div>

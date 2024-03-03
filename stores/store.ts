@@ -13,6 +13,7 @@ export const useStore = defineStore({
 		} as Modules,
 		searchProject: "",
 		searchEmployee: "",
+		isLoading: false,
 	}),
 	actions: {
 		handleShowModule(value: string) {

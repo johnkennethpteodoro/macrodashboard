@@ -56,7 +56,7 @@ const searchProject = computed(() => {
 					</div>
 					<input
 						type="text"
-						class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						class="bg-gray-50 shadow-lg shadow-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						placeholder="Search project name..."
 						autocomplete="off"
 						v-model="store.searchProject"
@@ -71,12 +71,12 @@ const searchProject = computed(() => {
 		<div
 			v-for="project in searchProject"
 			:key="project.id"
-			class="rounded bg-gray-50 dark:bg-gray-800"
+			class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 shadow-gray-200"
 		>
 			<div class="p-5">
 				<NuxtImg
 					src="../public/designStudio.png"
-					class="object-cover object-center w-full h-auto border border-gray-300"
+					class="object-cover object-center w-full h-auto border border-gray-300 shadow-lg shadow-gray-100"
 				/>
 				<div>
 					<div class="flex justify-between mt-5">
@@ -116,11 +116,13 @@ const searchProject = computed(() => {
 						</div>
 					</div>
 					<div class="flex gap-2 mt-5">
-						<button class="px-5 py-2 text-sm text-white bg-red-600 rounded">
+						<button
+							class="px-5 py-2 text-sm text-white bg-red-600 rounded shadow-lg shadow-gray-200"
+						>
 							View Project
 						</button>
 						<button
-							class="px-5 py-2 text-sm text-red-600 border border-red-600 rounded"
+							class="px-5 py-2 text-sm text-red-600 border border-red-600 rounded shadow-lg shadow-gray-200"
 						>
 							See More
 						</button>

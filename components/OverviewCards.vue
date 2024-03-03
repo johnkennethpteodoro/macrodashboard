@@ -7,12 +7,12 @@ const props = defineProps({
 
 <template>
 	<div
-		class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1"
+		class="grid grid-cols-2 gap-4 mb-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1"
 	>
 		<button
 			v-for="employeeData in props.employeeData"
 			:key="employeeData.id"
-			class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800"
+			class="flex items-center justify-center rounded shadow-lg bg-gray-50 dark:bg-gray-800 shadow-gray-200"
 		>
 			<div class="block text-center p-7">
 				<h6 class="mb-1 text-lg font-medium">{{ employeeData.type }}</h6>
@@ -22,7 +22,7 @@ const props = defineProps({
 		<button
 			v-for="projectOverview in props.projectData"
 			:key="projectOverview.id"
-			class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800"
+			class="flex items-center justify-center rounded shadow-lg bg-gray-50 dark:bg-gray-800 shadow-gray-200"
 		>
 			<div class="block text-center p-7">
 				<h6 class="mb-1 text-lg font-medium">{{ projectOverview.status }}</h6>

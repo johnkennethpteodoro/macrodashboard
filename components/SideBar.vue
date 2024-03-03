@@ -8,7 +8,7 @@ const hanldeClickModule = (value: string) => {
 </script>
 
 <template>
-	<div class="h-full overflow-y-auto bg-slate-950">
+	<div class="h-full overflow-y-auto shadow-lg bg-slate-950 shadow-gray-300">
 		<div class="pt-5 px-7">
 			<button
 				@click="() => hanldeClickModule('dashboard')"
@@ -86,5 +86,6 @@ const hanldeClickModule = (value: string) => {
 <style scoped>
 .active {
 	background-color: #475569;
+	border-left: 4px solid #94a3b8;
 }
 </style>

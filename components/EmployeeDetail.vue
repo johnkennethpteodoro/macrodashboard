@@ -96,7 +96,7 @@ const searchEmployee = computed(() => {
 					</div>
 					<input
 						type="text"
-						class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						class="bg-gray-50 border shadow-lg shadow-gray-200 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						placeholder="Search project name..."
 						autocomplete="off"
 						v-model="store.searchEmployee"
@@ -111,7 +111,7 @@ const searchEmployee = computed(() => {
 		<div
 			v-for="employee in searchEmployee"
 			:key="employee.id"
-			class="rounded bg-gray-50 dark:bg-gray-800"
+			class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 shadow-gray-200"
 		>
 			<div class="flex items-center p-5">
 				<div class="relative">

@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ["@pinia/nuxt", "nuxt-icon", "@nuxt/image"],
+	modules: ["@pinia/nuxt", "nuxt-icon", "@nuxt/image", "@nuxtjs/supabase"],
 	css: ["~/assets/css/main.css"],
-	devtools: { enabled: true },
 	app: {
 		head: {
 			title: "macrodashboard",
@@ -19,5 +18,9 @@ export default defineNuxtConfig({
 			tailwindcss: {},
 			autoprefixer: {},
 		},
+	},
+	supabase: {
+		url: process.env.SUPABASE_URL,
+		key: process.env.SUPABASE_KEY,
 	},
 });
