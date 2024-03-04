@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useStore } from "../stores/store";
 const store = useStore();
 </script>

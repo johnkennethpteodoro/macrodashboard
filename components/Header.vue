@@ -1,8 +1,12 @@
-<script lang="ts" setup>
+<script setup>
 import { useStore } from "../stores/store";
 const store = useStore();
-const hanldeClickModule = (value: string) => {
+const hanldeClickModule = (value) => {
 	store.handleShowModule(value);
+};
+
+const handleLogout = () => {
+	navigateTo("/");
 };
 </script>
 
@@ -55,7 +59,7 @@ const hanldeClickModule = (value: string) => {
 			</div>
 		</div>
 		<div class="hidden sm:hidden xl:block lg:hidden md:hidden">
-			<button class="flex items-center">
+			<button @click="handleLogout()" class="flex items-center">
 				<Icon name="material-symbols:logout-sharp" color="black" size="24px" class="mr-1" />
 				Logout
 			</button>
