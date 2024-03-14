@@ -6,7 +6,7 @@ export interface Modules {
 	employees: boolean;
 }
 
-export interface MyInformation {
+export interface UserData {
 	id: number;
 	name: string;
 	email: string;

@@ -14,6 +14,7 @@ export const useStore = defineStore({
 		searchProject: "",
 		searchEmployee: "",
 		isLoading: false,
+		isAuthenticated: false,
 	}),
 	actions: {
 		handleShowModule(value: string) {
@@ -21,6 +22,13 @@ export const useStore = defineStore({
 				this.modules[module as keyof Modules] = module === value;
 			}
 		},
+		setAuthenticated(status: boolean) {
+			this.isAuthenticated = status;
+		},
 	},
-	getters: {},
+	getters: {
+		isLoggedIn(): boolean {
+			return this.isAuthenticated;
+		},
+	},
 });

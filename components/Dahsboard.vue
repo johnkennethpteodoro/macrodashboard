@@ -1,8 +1,24 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onMounted, ref } from "vue";
-
 import { useStore } from "../stores/store";
+import { useFetchUserData } from "../composables/useFetchUserData";
+import type { UserData } from "../types/global";
+
+const userDataList = ref<UserData[]>([]);
 const store = useStore();
+
+const fetchUserData = async () => {
+	store.isLoading = true;
+	try {
+		const fetchedUserData = await useFetchUserData();
+		console.log("💾 UserData: ", fetchedUserData);
+		userDataList.value = fetchedUserData;
+	} catch (error) {
+		console.error("Error fetching user data:", error);
+	} finally {
+		store.isLoading = false;
+	}
+};
 
 const hanldeClickModule = (value: string) => {
 	store.handleShowModule(value);
@@ -22,6 +38,8 @@ const getCurrentDateTime = () => {
 };
 
 const currentDateTime = ref(getCurrentDateTime());
+
+onMounted(fetchUserData);
 
 onMounted(() => {
 	setInterval(() => {
@@ -85,13 +103,20 @@ const birthdayCelebrants = {
 
 <template>
 	<div>
+		<Loading v-if="store.isLoading" />
 		<div
 			class="grid items-center grid-cols-6 mb-4 rounded shadow-lg xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-gray-50 dark:bg-gray-800 shadow-gray-200"
 		>
 			<div class="h-full col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2">
-				<div class="pt-5 pb-5 pl-5 xl:p-8 lg:p-8 md:p-7 sm:p-5">
-					<h6 class="font-black xl:text-4xl lg:text-4xl md:text-2xl sm:text-lg">
-						Juan Dela Cruz
+				<div
+					v-for="userData in userDataList"
+					:key="userData.id"
+					class="pt-5 pb-5 pl-5 xl:p-8 lg:p-8 md:p-7 sm:p-5"
+				>
+					<h6
+						class="font-black capitalize xl:text-4xl lg:text-4xl md:text-2xl sm:text-lg"
+					>
+						{{ userData.name.slice(0, 12) }}
 					</h6>
 					<p class="text-sm capitalize xl:text-lg lg:text-lg md:text-lg sm:text-sm">
 						software engineer

@@ -1,37 +1,26 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import type { MyInformation } from "../types/global";
 import { useStore } from "../stores/store";
+import { useFetchUserData } from "../composables/useFetchUserData";
+import type { UserData } from "../types/global";
 
+const userDataList = ref<UserData[]>([]);
 const store = useStore();
-const supabase = useSupabaseClient();
-
-const myInformation = ref<MyInformation[]>([]);
 
 const fetchUserData = async () => {
 	store.isLoading = true;
-
 	try {
-		const { data: user, error } = await supabase.from("user").select("*");
-
-		if (user) {
-			console.log("Supabase connected successfully!");
-			myInformation.value = user;
-		} else {
-			console.error("Supabase query error:", error);
-		}
+		const fetchedUserData = await useFetchUserData();
+		console.log("💾 UserData: ", fetchedUserData);
+		userDataList.value = fetchedUserData;
 	} catch (error) {
-		console.error("Supabase connection error:", error);
+		console.error("Error fetching user data:", error);
 	} finally {
-		setTimeout(() => {
-			store.isLoading = false;
-		}, 1000);
+		store.isLoading = false;
 	}
 };
 
-onMounted(async () => {
-	await fetchUserData();
-});
+onMounted(fetchUserData);
 </script>
 
 <template>
@@ -46,9 +35,13 @@ onMounted(async () => {
 						class="object-contain object-center w-20 h-20 bg-gray-500 rounded-full -mt-14"
 					/>
 				</div>
-				<div v-for="mySelf in myInformation" :key="mySelf.id" class="pb-5 mt-4 text-center">
-					<h6 class="text-xl font-medium capitalize">{{ mySelf.name }}</h6>
-					<p class="text-sm font-light">QX-092023-272{{ mySelf.id }}</p>
+				<div
+					v-for="userData in userDataList"
+					:key="userData.id"
+					class="pb-5 mt-4 text-center"
+				>
+					<h6 class="text-xl font-medium capitalize">{{ userData.name }}</h6>
+					<p class="text-sm font-light">QX-092023-272{{ userData.id }}</p>
 				</div>
 			</div>
 		</div>
@@ -57,8 +50,8 @@ onMounted(async () => {
 			class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:grid-cols-1 sm:grid sm:grid-cols-1"
 		>
 			<div
-				v-for="mySelf in myInformation"
-				:key="mySelf.id"
+				v-for="userData in userDataList"
+				:key="userData.id"
 				class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-gray-200"
 			>
 				<div class="items-center">
@@ -72,27 +65,27 @@ onMounted(async () => {
 					</h6>
 				</div>
 				<div class="flex items-center mt-8">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Full Name:</p>
-					<h6 class="text-sm">{{ mySelf.name }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Full Name:</p>
+					<h6 class="text-sm capitalize">{{ userData.name }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Email:</p>
-					<h6 class="text-sm">{{ mySelf.email }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Email:</p>
+					<h6 class="text-sm">{{ userData.email }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Phone:</p>
-					<h6 class="text-sm">{{ mySelf.phone }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Phone:</p>
+					<h6 class="text-sm">{{ userData.phone }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Address:</p>
-					<h6 class="text-sm">
-						{{ mySelf.address }}
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Address:</p>
+					<h6 class="text-sm capitalize">
+						{{ userData.address }}
 					</h6>
 				</div>
 			</div>
 			<div
-				v-for="mySelf in myInformation"
-				:key="mySelf.id"
+				v-for="userData in userDataList"
+				:key="userData.id"
 				class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-gray-200"
 			>
 				<div class="items-center">
@@ -107,29 +100,29 @@ onMounted(async () => {
 					</h6>
 				</div>
 				<div class="flex items-center mt-8">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Member Since:</p>
-					<h6 class="text-sm">{{ mySelf.memberSince }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Member Since:</p>
+					<h6 class="text-sm">{{ userData.memberSince.slice(0, 10) }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Deparment:</p>
-					<h6 class="text-sm">{{ mySelf.department }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Deparment:</p>
+					<h6 class="text-sm capitalize">{{ userData.department }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Employement Type:</p>
-					<h6 class="text-sm">{{ mySelf.employmentType }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Employement Type:</p>
+					<h6 class="text-sm capitalize">{{ userData.employmentType }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Shift:</p>
-					<h6 class="text-sm">{{ mySelf.shift }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Shift:</p>
+					<h6 class="text-sm">{{ userData.shift }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Manager:</p>
-					<h6 class="text-sm">{{ mySelf.manager }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Manager:</p>
+					<h6 class="text-sm capitalize">{{ userData.manager }}</h6>
 				</div>
 			</div>
 			<div
-				v-for="mySelf in myInformation"
-				:key="mySelf.id"
+				v-for="userData in userDataList"
+				:key="userData.id"
 				class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-gray-200"
 			>
 				<div class="items-center">
@@ -143,20 +136,20 @@ onMounted(async () => {
 					</h6>
 				</div>
 				<div class="flex items-center mt-8">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Pagibig:</p>
-					<h6 class="text-sm">{{ mySelf.pagibig }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Pagibig:</p>
+					<h6 class="text-sm">{{ userData.pagibig }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">Philhealth:</p>
-					<h6 class="text-sm">{{ mySelf.philhealth }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Philhealth:</p>
+					<h6 class="text-sm">{{ userData.philhealth }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">sss-number:</p>
-					<h6 class="text-sm">{{ mySelf.sssNumber }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">sss-number:</p>
+					<h6 class="text-sm">{{ userData.sssNumber }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
-					<p class="mr-2 text-xs text-gray-500 uppercase">tin:</p>
-					<h6 class="text-sm">{{ mySelf.tin }}</h6>
+					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">tin:</p>
+					<h6 class="text-sm">{{ userData.tin }}</h6>
 				</div>
 			</div>
 		</div>
