@@ -105,7 +105,7 @@ const birthdayCelebrants = {
 	<div>
 		<Loading v-if="store.isLoading" />
 		<div
-			class="grid items-center grid-cols-6 mb-4 rounded shadow-lg xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-gray-50 dark:bg-gray-800 shadow-gray-200"
+			class="grid items-center grid-cols-6 mb-4 shadow-lg rounded-2xl xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-gray-50 dark:bg-gray-800 shadow-slate-300"
 		>
 			<div class="h-full col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2">
 				<div
@@ -124,14 +124,14 @@ const birthdayCelebrants = {
 
 					<button
 						@click="() => hanldeClickModule('attendance')"
-						class="px-5 py-2 text-white bg-red-600 rounded shadow-lg mt-7 shadow-gray-200"
+						class="px-5 py-2 text-white bg-red-600 rounded-full shadow-lg mt-7 shadow-slate-200"
 					>
 						Clock In
 					</button>
 				</div>
 			</div>
 			<div
-				class="h-full col-span-4 rounded-r xl:col-span-2 lg:col-span-2 md:col-span-4 to-trapezoid sm:col-span-4 bg-slate-950"
+				class="h-full col-span-4 rounded-r-2xl xl:col-span-2 lg:col-span-2 md:col-span-4 to-trapezoid sm:col-span-4 bg-slate-950"
 			>
 				<div class="z-50 pt-5 pb-5 pr-5 text-right xl:p-8 lg:p-8 md:p-7 sm:p-5">
 					<h6
@@ -156,7 +156,7 @@ const birthdayCelebrants = {
 			class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-6 md:grid md:col-span-6 sm:grid sm:col-span-6"
 		>
 			<div
-				class="rounded shadow-lg xl:col-span-3 lg:col-span-4 md:col-span-3 bg-gray-50 dark:bg-gray-800 sm:col-span-3 shadow-gray-200"
+				class="shadow-lg rounded-2xl xl:col-span-3 lg:col-span-4 md:col-span-3 bg-gray-50 dark:bg-gray-800 sm:col-span-3 shadow-slate-300"
 			>
 				<div class="items-center py-7 px-7">
 					<h6 class="flex items-center font-semibold">
@@ -176,7 +176,7 @@ const birthdayCelebrants = {
 				</div>
 			</div>
 			<div
-				class="justify-center block rounded xl:col-span-1 lg:col-span-2 md:col-span-3 bg-gray-50 sm:col-span-3 dark:bg-gray-800"
+				class="justify-center block shadow-lg rounded-2xl xl:col-span-1 lg:col-span-2 md:col-span-3 bg-gray-50 sm:col-span-3 dark:bg-gray-800 shadow-slate-300"
 			>
 				<div class="flex items-center px-7 py-7">
 					<Icon name="material-symbols:cake" color="black" size="24px" class="mr-5" />
@@ -189,7 +189,7 @@ const birthdayCelebrants = {
 						class="flex items-center py-1.5 px-7"
 					>
 						<h6
-							class="p-2 mr-4 text-xs font-bold text-white capitalize rounded shadow-lg bg-slate-950 shadow-gray-200"
+							class="px-3 py-2 mr-4 text-xs font-bold text-white capitalize rounded-full shadow-lg bg-slate-950 shadow-slate-200"
 						>
 							{{ celebrants.birthday }}
 						</h6>

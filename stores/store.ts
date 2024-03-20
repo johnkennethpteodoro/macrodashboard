@@ -15,6 +15,7 @@ export const useStore = defineStore({
 		searchEmployee: "",
 		isLoading: false,
 		isAuthenticated: false,
+		isShowSidebar: true,
 	}),
 	actions: {
 		handleShowModule(value: string) {

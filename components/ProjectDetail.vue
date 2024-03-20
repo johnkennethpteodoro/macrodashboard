@@ -56,7 +56,7 @@ const searchProject = computed(() => {
 					</div>
 					<input
 						type="text"
-						class="bg-gray-50 shadow-lg shadow-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						class="bg-gray-50 shadow-lg shadow-slate-300 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 						placeholder="Search project name..."
 						autocomplete="off"
 						v-model="store.searchProject"
@@ -71,12 +71,12 @@ const searchProject = computed(() => {
 		<div
 			v-for="project in searchProject"
 			:key="project.id"
-			class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 shadow-gray-200"
+			class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-slate-300"
 		>
 			<div class="p-5">
 				<NuxtImg
 					src="../public/designStudio.png"
-					class="object-cover object-center w-full h-auto border border-gray-300 shadow-lg shadow-gray-100"
+					class="object-cover object-center w-full h-auto border shadow-lg border-slate-300 rounded-2xl shadow-gray-100"
 				/>
 				<div>
 					<div class="flex justify-between mt-5">
@@ -117,12 +117,12 @@ const searchProject = computed(() => {
 					</div>
 					<div class="flex gap-2 mt-5">
 						<button
-							class="px-5 py-2 text-sm text-white bg-red-600 rounded shadow-lg shadow-gray-200"
+							class="px-5 py-2 text-sm text-white bg-red-600 rounded-full shadow-lg shadow-slate-300"
 						>
 							View Project
 						</button>
 						<button
-							class="px-5 py-2 text-sm text-red-600 border border-red-600 rounded shadow-lg shadow-gray-200"
+							class="px-5 py-2 text-sm text-red-600 border border-red-600 rounded-full shadow-lg shadow-slate-300"
 						>
 							See More
 						</button>

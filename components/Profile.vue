@@ -27,8 +27,8 @@ onMounted(fetchUserData);
 	<div>
 		<Loading v-if="store.isLoading" />
 		<div class="grid grid-cols-1 mb-4">
-			<div class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 shadow-gray-200">
-				<div class="rounded-t h-36 bg-slate-950"></div>
+			<div class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-slate-300">
+				<div class="rounded-t-2xl h-36 bg-slate-950"></div>
 				<div class="flex justify-center">
 					<NuxtImg
 						src="../public/profile.JPG"
@@ -52,7 +52,7 @@ onMounted(fetchUserData);
 			<div
 				v-for="userData in userDataList"
 				:key="userData.id"
-				class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-gray-200"
+				class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-slate-300"
 			>
 				<div class="items-center">
 					<h6 class="flex items-center font-semibold">
@@ -86,7 +86,7 @@ onMounted(fetchUserData);
 			<div
 				v-for="userData in userDataList"
 				:key="userData.id"
-				class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-gray-200"
+				class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-slate-300"
 			>
 				<div class="items-center">
 					<h6 class="flex items-center font-semibold">
@@ -123,7 +123,7 @@ onMounted(fetchUserData);
 			<div
 				v-for="userData in userDataList"
 				:key="userData.id"
-				class="rounded shadow-lg bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-gray-200"
+				class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-slate-300"
 			>
 				<div class="items-center">
 					<h6 class="flex items-center font-semibold">

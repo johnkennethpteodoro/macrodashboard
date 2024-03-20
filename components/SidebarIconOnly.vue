@@ -1,0 +1,68 @@
+<script setup lang="ts">
+import { useStore } from "../stores/store";
+const store = useStore();
+
+const hanldeClickModule = (value: string) => {
+	store.handleShowModule(value);
+};
+</script>
+
+<template>
+	<div class="h-full overflow-y-auto shadow-lg bg-slate-950 shadow-gray-300">
+		<div class="pt-5 px-3.5">
+			<button
+				@click="() => hanldeClickModule('dashboard')"
+				class="flex items-center px-3.5 py-2 mb-2 text-white rounded-full"
+			>
+				<Icon name="material-symbols:incomplete-circle" color="white" size="26px" />
+			</button>
+		</div>
+		<div class="px-3.5 py-4">
+			<button
+				@click="() => hanldeClickModule('dashboard')"
+				class="items-center px-3.5 py-2 mb-2 text-white rounded-full hover:bg-slate-500"
+				:class="{ active: store.modules.dashboard === true }"
+			>
+				<Icon name="material-symbols:space-dashboard" color="white" size="26px" />
+			</button>
+			<button
+				@click="() => hanldeClickModule('attendance')"
+				class="items-center px-3.5 py-2 mb-2 text-white rounded-full hover:bg-slate-500"
+				:class="{ active: store.modules.attendance === true }"
+			>
+				<Icon name="material-symbols:calendar-clock" color="white" size="26px" />
+			</button>
+			<button
+				@click="() => hanldeClickModule('project')"
+				class="items-center px-3.5 py-2 mb-2 text-white rounded-full hover:bg-slate-500"
+				:class="{ active: store.modules.project === true }"
+			>
+				<Icon name="material-symbols:files" color="white" size="26px" />
+			</button>
+			<button
+				@click="() => hanldeClickModule('profile')"
+				class="items-center px-3.5 py-2 mb-2 text-white rounded-full hover:bg-slate-500"
+				:class="{ active: store.modules.profile === true }"
+			>
+				<Icon name="material-symbols:person-rounded" color="white" size="26px" />
+			</button>
+			<button
+				@click="() => hanldeClickModule('employees')"
+				class="items-center px-3.5 py-2 mb-2 text-white rounded-full hover:bg-slate-500"
+				:class="{ active: store.modules.employees === true }"
+			>
+				<Icon name="material-symbols:group-rounded" color="white" size="26px" />
+			</button>
+		</div>
+	</div>
+</template>
+
+<style scoped>
+.active {
+	background-color: #475569;
+}
+
+/* * {
+	border: 1px solid red;
+} */
+</style>
