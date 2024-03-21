@@ -7,5 +7,21 @@
 } */
 
 body {
-	background-color: #e2e8f0;
+	background: hsla(215, 16%, 47%, 1);
+
+	background: linear-gradient(360deg, hsla(215, 16%, 47%, 1) 0%, hsla(213, 27%, 84%, 1) 100%);
+
+	background: -moz-linear-gradient(
+		360deg,
+		hsla(215, 16%, 47%, 1) 0%,
+		hsla(213, 27%, 84%, 1) 100%
+	);
+
+	background: -webkit-linear-gradient(
+		360deg,
+		hsla(215, 16%, 47%, 1) 0%,
+		hsla(213, 27%, 84%, 1) 100%
+	);
+
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#64748B", endColorstr="#CBD5E1", GradientType=1 );
 }

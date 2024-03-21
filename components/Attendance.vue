@@ -107,12 +107,12 @@ const attendanceLogs = {
 		<div class="gap-4 xl:grid xl:grid-cols-6">
 			<div
 				v-if="!isClockIn"
-				class="relative mb-4 overflow-x-auto shadow-lg rounded-2xl p-7 bg-gray-50 shadow-slate-300 sm:rounded-2xl dark:bg-gray-800 xl:col-span-4"
+				class="relative mb-4 overflow-x-auto rounded-2xl p-7 bg-card1 sm:rounded-2xl dark:bg-gray-800 xl:col-span-4"
 			>
 				<div class="text-center">
 					<div v-if="isOpenClockoutMsg" class="flex justify-between mb-2 text-sm">
-						<h6 class="font-semibold text-gray-400">Rendered Hours</h6>
-						<p class="text-green-800">{{ totalRenderHours }}</p>
+						<h6 class="font-semibold text-white">Rendered Hours</h6>
+						<p class="text-white">{{ totalRenderHours }}</p>
 					</div>
 					<div v-if="isOpenClockoutMsg" class="grid grid-cols-2 gap-4 mb-16">
 						<div class="p-4 border border-slate-200 rounded-xl bg-slate-50">
@@ -171,16 +171,16 @@ const attendanceLogs = {
 					</div>
 					<div v-else>
 						<div class="mb-5">
-							<h6 class="text-xl font-semibold capitalize text-slate-950">
+							<h6 class="text-xl font-semibold text-white capitalize">
 								Good day, john Kenneth
 							</h6>
-							<p class="mt-2 text-sm">Tap the button bellow to clock in</p>
+							<p class="mt-2 text-sm text-white">Tap the button bellow to clock in</p>
 						</div>
 
 						<div class="mb-16">
 							<Icon
 								name="material-symbols:keyboard-double-arrow-down-rounded"
-								color="black"
+								color="white"
 								size="50px"
 								class="opacity-35"
 							/>
@@ -192,7 +192,7 @@ const attendanceLogs = {
 						label="Open"
 						data-modal-target="popup-modal"
 						data-modal-toggle="popup-modal"
-						class="w-40 h-40 text-xl font-black text-white uppercase border border-white rounded-full shadow-2xl bg-slate-950 shadow-gray-500"
+						class="w-40 h-40 text-xl font-black text-black uppercase border-2 rounded-full shadow-2xl border-slate-700 drop-shadow-lg bg-slate-300 shadow-gray-500"
 					>
 						clock in
 					</button>
@@ -203,23 +203,31 @@ const attendanceLogs = {
 								ring: '',
 								divide: 'divide-y divide-gray-100 dark:divide-gray-800',
 							}"
+							class="bg-card"
 						>
 							<div class="text-center">
-								<Icon name="material-symbols:warning" color="red" size="50px" />
+								<Icon
+									name="material-symbols:warning"
+									color="red"
+									size="60px"
+									class="opacity-50"
+								/>
 							</div>
 							<div class="my-5 text-center">
-								<p class="text-lg">Would you like to conitinue with clock in?</p>
+								<p class="text-lg text-white">
+									Would you like to conitinue with clock in?
+								</p>
 							</div>
 							<div class="mt-3 text-center">
 								<div class="flex justify-center">
 									<button
-										class="w-20 px-4 py-2 mr-2 text-sm text-white bg-green-500 rounded-md"
+										class="px-4 py-2 mr-2 text-sm text-white rounded-full bg-slate-950 w-28"
 										@click="handleClockIn"
 									>
 										Yes
 									</button>
 									<button
-										class="w-20 px-4 py-2 text-sm text-white bg-red-500 rounded-md"
+										class="px-4 py-2 text-sm text-white border border-white rounded-full w-28"
 										@click="isOpenClockIn = false"
 									>
 										Cancel
@@ -230,19 +238,19 @@ const attendanceLogs = {
 					</UModal>
 
 					<div class="mt-5">
-						<h6 class="text-xl font-semibold">{{ currentDateTime.time }}</h6>
-						<p class="text-sm">{{ currentDateTime.day }}</p>
+						<h6 class="text-xl font-semibold text-white">{{ currentDateTime.time }}</h6>
+						<p class="text-sm text-white">{{ currentDateTime.day }}</p>
 					</div>
 				</div>
 			</div>
 			<div
 				v-if="isClockIn"
-				class="relative mb-4 overflow-x-auto shadow-lg rounded-2xl p-7 bg-gray-50 shadow-slate-300 sm:rounded-2xl dark:bg-gray-800 xl:col-span-4"
+				class="relative mb-4 overflow-x-auto rounded-2xl p-7 bg-card1 sm:rounded-2xl dark:bg-gray-800 xl:col-span-4"
 			>
 				<div>
 					<div class="flex justify-between text-sm">
-						<h6 class="font-semibold text-gray-400">Collected Hours</h6>
-						<p class="text-green-800">0:00</p>
+						<h6 class="font-semibold text-white">Collected Hours</h6>
+						<p class="text-white">0:00</p>
 					</div>
 					<div class="grid grid-cols-2 gap-4 mt-3">
 						<div class="p-4 border border-slate-200 rounded-2xl bg-slate-50">
@@ -304,7 +312,7 @@ const attendanceLogs = {
 						label="Open"
 						data-modal-target="popup-modal"
 						data-modal-toggle="popup-modal"
-						class="w-40 h-40 text-xl font-black text-white uppercase bg-red-600 border border-white rounded-full shadow-2xl shadow-gray-500"
+						class="w-40 h-40 text-xl font-black text-white uppercase border border-white rounded-full shadow-2xl drop-shadow-lg bg-slate-900 shadow-gray-500"
 					>
 						clock out
 					</button>
@@ -315,23 +323,31 @@ const attendanceLogs = {
 								ring: '',
 								divide: 'divide-y divide-gray-100 dark:divide-gray-800',
 							}"
+							class="bg-card"
 						>
 							<div class="text-center">
-								<Icon name="material-symbols:warning" color="red" size="50px" />
+								<Icon
+									name="material-symbols:warning"
+									color="red"
+									size="60px"
+									class="opacity-50"
+								/>
 							</div>
 							<div class="my-5 text-center">
-								<p class="text-lg">Would you like to continue with clock out?</p>
+								<p class="text-lg text-white">
+									Would you like to continue with clock out?
+								</p>
 							</div>
 							<div class="mt-3 text-center">
 								<div class="flex justify-center">
 									<button
-										class="w-20 px-4 py-2 mr-2 text-sm text-white bg-green-500 rounded-md"
+										class="px-4 py-2 mr-2 text-sm text-white rounded-md w-28 bg-slate-950"
 										@click="handleClockOut"
 									>
 										Yes
 									</button>
 									<button
-										class="w-20 px-4 py-2 text-sm text-white bg-red-500 rounded-md"
+										class="px-4 py-2 text-sm text-white border border-white rounded-md w-28"
 										@click="isOpenClockIn = false"
 									>
 										Cancel
@@ -342,17 +358,15 @@ const attendanceLogs = {
 					</UModal>
 
 					<div class="mt-5">
-						<h6 class="text-xl font-semibold">{{ currentDateTime.time }}</h6>
-						<p class="text-sm">{{ currentDateTime.day }}</p>
+						<h6 class="text-xl font-semibold text-white">{{ currentDateTime.time }}</h6>
+						<p class="text-sm text-white">{{ currentDateTime.day }}</p>
 					</div>
 				</div>
 			</div>
 			<div class="xl:col-span-2">
 				<div class="flex items-center justify-between px-4 py-4">
 					<h6 class="font-semibold">Recent Leaves</h6>
-					<button
-						class="px-4 py-2 text-sm text-white rounded-full shadow-lg bg-slate-950 shadow-slate-300"
-					>
+					<button class="px-4 py-2 text-sm text-white rounded-full bg-slate-950">
 						Sort By
 						<Icon
 							name="solar:alt-arrow-down-line-duotone"
@@ -362,72 +376,60 @@ const attendanceLogs = {
 						/>
 					</button>
 				</div>
-				<div
-					class="mb-4 shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 shadow-slate-300"
-				>
+				<div class="mb-4 rounded-2xl bg-card dark:bg-gray-800 py-7">
 					<div class="flex items-center justify-between mb-3 px-7">
 						<div>
-							<h6 class="text-lg">Going for a trip</h6>
-							<p class="text-xs text-gray-500">Vacation Leave</p>
+							<h6 class="text-lg text-white">Going for a trip</h6>
+							<p class="text-xs text-gray-400">Vacation Leave</p>
 						</div>
-						<h6
-							class="px-3 py-1 text-sm text-white bg-green-700 shadow-lg rounded-2xl shadow-slate-300"
-						>
+						<h6 class="px-3 py-1 text-sm text-white bg-green-700 rounded-2xl">
 							Pending
 						</h6>
 					</div>
 					<div class="flex items-center px-7">
 						<Icon
 							name="material-symbols:calendar-clock"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>
 						<!-- <p class="text-xs">{{ currentDateTimeIn.day }}</p> -->
 					</div>
 				</div>
-				<div
-					class="mb-4 shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 shadow-slate-300"
-				>
+				<div class="mb-4 rounded-2xl bg-card dark:bg-gray-800 py-7">
 					<div class="flex items-center justify-between mb-3 px-7">
 						<div>
-							<h6 class="text-lg">Going for a trip</h6>
-							<p class="text-xs text-gray-500">Vacation Leave</p>
+							<h6 class="text-lg text-white">Going for a trip</h6>
+							<p class="text-xs text-gray-400">Vacation Leave</p>
 						</div>
-						<h6
-							class="px-3 py-1 text-sm text-white bg-green-700 rounded-full shadow-lg shadow-slate-300"
-						>
+						<h6 class="px-3 py-1 text-sm text-white bg-green-700 rounded-full">
 							Pending
 						</h6>
 					</div>
 					<div class="flex items-center px-7">
 						<Icon
 							name="material-symbols:calendar-clock"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>
 						<!-- <p class="text-xs">{{ currentDateTimeIn.day }}</p> -->
 					</div>
 				</div>
-				<div
-					class="mb-4 shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 shadow-slate-300"
-				>
+				<div class="mb-4 rounded-2xl bg-card dark:bg-gray-800 py-7">
 					<div class="flex items-center justify-between mb-3 px-7">
 						<div>
-							<h6 class="text-lg">Going for a trip</h6>
-							<p class="text-xs text-gray-500">Vacation Leave</p>
+							<h6 class="text-lg text-white">Going for a trip</h6>
+							<p class="text-xs text-gray-400">Vacation Leave</p>
 						</div>
-						<h6
-							class="px-3 py-1 text-sm text-white bg-green-700 rounded-full shadow-lg shadow-slate-300"
-						>
+						<h6 class="px-3 py-1 text-sm text-white bg-green-700 rounded-full">
 							Pending
 						</h6>
 					</div>
 					<div class="flex items-center px-7">
 						<Icon
 							name="material-symbols:calendar-clock"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>
@@ -439,15 +441,13 @@ const attendanceLogs = {
 
 		<div class="grid grid-cols-1 gap-4">
 			<div
-				class="relative mb-4 overflow-x-auto shadow-lg rounded-2xl bg-gray-50 shadow-slate-300 sm:rounded-2xl dark:bg-gray-800 xl:col-span-4"
+				class="relative mb-4 overflow-x-auto rounded-2xl bg-card sm:rounded-2xl dark:bg-gray-800 xl:col-span-4"
 			>
 				<div class="flex items-center justify-between py-7 px-7">
-					<h6 class="font-semibold">Attendance Logs</h6>
+					<h6 class="font-semibold text-white">Attendance Logs</h6>
 					<div class="flex items-center">
-						<h6 class="mr-5 font-semibold">Month</h6>
-						<button
-							class="h-10 px-4 text-sm text-white rounded-full shadow-lg bg-slate-950 shadow-slate-300"
-						>
+						<h6 class="mr-5 font-semibold text-white">Month</h6>
+						<button class="h-10 px-4 text-sm text-white rounded-full bg-slate-950">
 							February
 							<Icon
 								name="solar:alt-arrow-down-line-duotone"
@@ -462,7 +462,7 @@ const attendanceLogs = {
 					class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400"
 				>
 					<thead
-						class="text-xs text-gray-700 border-t border-b bg-slate-50 dark:bg-gray-700 dark:text-gray-400"
+						class="text-xs text-white border-t border-b dark:bg-gray-700 dark:text-gray-400"
 					>
 						<tr>
 							<th scope="col" class="px-6 py-3">Date</th>
@@ -481,11 +481,11 @@ const attendanceLogs = {
 						<tr
 							v-for="attendance in attendanceLogs"
 							:key="attendance.id"
-							class="border-b dark:bg-gray-800 dark:border-gray-700"
+							class="text-white border-b dark:bg-gray-800 dark:border-gray-700"
 						>
 							<th
 								scope="row"
-								class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+								class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white"
 							>
 								{{ attendance.date }}
 							</th>
@@ -501,7 +501,11 @@ const attendanceLogs = {
 </template>
 
 <style scoped>
-/* * {
-	border: 1px solid red;
-} */
+.bg-card1 {
+	background-image: url(../public/bgCard1.svg);
+}
+
+.bg-card {
+	background-color: #334155;
+}
 </style>

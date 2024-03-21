@@ -2,21 +2,21 @@
 
 <template>
 	<div class="px-5 pb-7">
-		<div class="border shadow-lg border-slate-300 bg-slate-100 rounded-2xl shadow-gray-100">
+		<div class="shadow-lg bg-slate-300 rounded-2xl">
 			<NuxtImg
 				src="../public/employeeportal.png"
-				class="object-cover object-center w-full h-auto p-2 rounded-2xl"
+				class="object-center w-full h-auto rounded-t-2xl"
 			/>
 			<div class="p-4">
 				<h6 class="text-xl">Employee Portal</h6>
-				<p class="text-xs text-gray-400">Last Edited: 2 days ago</p>
+				<p class="text-xs text-gray-500">Last Edited: 2 days ago</p>
 
 				<p class="text-sm mt-7">
 					The employee portal helps you quickly find HR forms, book company facilities,
 					and get answers to common questions.
 				</p>
 				<button
-					class="px-5 py-2 text-white bg-red-600 rounded-full shadow-lg mt-7 text-md shadow-gray-50"
+					class="px-5 py-2 text-white rounded-full shadow-md bg-slate-950 mt-7 text-md shadow-slate-400"
 				>
 					Read More
 				</button>

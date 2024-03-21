@@ -85,7 +85,7 @@ const searchEmployee = computed(() => {
 	<div>
 		<div class="flex justify-between">
 			<div class="py-7">
-				<h6 class="font-semibold">Employee List</h6>
+				<h6 class="font-semibold text-white">Employee List</h6>
 			</div>
 			<div class="grid items-center w-80">
 				<div class="relative w-full">
@@ -96,7 +96,7 @@ const searchEmployee = computed(() => {
 					</div>
 					<input
 						type="text"
-						class="bg-gray-50 border shadow-lg shadow-slate-300 border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						class="bg-slate-300 border-2 border-slate-500 text-gray-900 text-sm rounded-full focus:ring-slate-500 focus:border-slate-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
 						placeholder="Search project name..."
 						autocomplete="off"
 						v-model="store.searchEmployee"
@@ -111,7 +111,7 @@ const searchEmployee = computed(() => {
 		<div
 			v-for="employee in searchEmployee"
 			:key="employee.id"
-			class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-slate-300"
+			class="rounded-2xl bg-card7 dark:bg-gray-800"
 		>
 			<div class="flex items-center p-5">
 				<div class="relative">
@@ -129,13 +129,19 @@ const searchEmployee = computed(() => {
 				</div>
 
 				<div class="ml-5 text-left">
-					<h6 class="font-semibold capitalize">{{ employee.name }}</h6>
-					<h6 class="text-sm text-gray-500 capitalize">{{ employee.jobPosition }}</h6>
-					<p class="text-sm">{{ employee.email }}</p>
+					<h6 class="font-semibold text-white capitalize">{{ employee.name }}</h6>
+					<h6 class="text-sm text-white capitalize">
+						{{ employee.jobPosition }}
+					</h6>
+					<p class="text-sm text-gray-300">{{ employee.email }}</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.bg-card7 {
+	background-image: url("../public/bgCard7.svg");
+}
+</style>

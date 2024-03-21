@@ -35,11 +35,11 @@ async function signUp() {
 		<div
 			class="grid h-screen grid-cols-3 gap-4 xl:grid-cols-3 xl:grid lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 sm:grid sm:grid-cols-3"
 		>
-			<div class="hidden bg-slate-950 xl:block lg:hiden md:hidden sm:hidden"></div>
+			<div class="hidden bg-card xl:block lg:hiden md:hidden sm:hidden"></div>
 			<div
 				class="flex items-center justify-center col-span-3 px-10 xl:col-span-2 lg:col-span-3 md:col-span-3 sm:col-span-3 xl:px-64 lg:px-72 md:px-40 sm:px-32"
 			>
-				<div class="w-full py-12 rounded-xl bg-slate-950 px-7">
+				<div class="w-full py-12 rounded-xl bg-card6 px-7">
 					<form @submit.prevent="signUp" class="grid gap-4">
 						<h6 class="mb-6 text-4xl font-bold text-center text-white">QUICKSRIKE</h6>
 						<h6 class="text-center text-white">LOGIN</h6>
@@ -58,7 +58,7 @@ async function signUp() {
 
 						<button
 							type="submit"
-							class="px-5 py-2 mt-5 text-lg text-white rounded-md bg-slate-700"
+							class="px-5 py-2 text-lg text-white rounded-md mt-9 bg-slate-900"
 						>
 							Login
 						</button>
@@ -71,4 +71,12 @@ async function signUp() {
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.bg-card6 {
+	background-image: url("../public/bgCard6.svg");
+}
+
+.bg-card {
+	background-color: #334155;
+}
+</style>

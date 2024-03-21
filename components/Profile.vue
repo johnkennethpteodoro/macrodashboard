@@ -27,12 +27,12 @@ onMounted(fetchUserData);
 	<div>
 		<Loading v-if="store.isLoading" />
 		<div class="grid grid-cols-1 mb-4">
-			<div class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-slate-300">
-				<div class="rounded-t-2xl h-36 bg-slate-950"></div>
+			<div class="rounded-2xl bg-slate-300 dark:bg-gray-800">
+				<div class="rounded-t-2xl h-36 bg-card2"></div>
 				<div class="flex justify-center">
 					<NuxtImg
 						src="../public/profile.JPG"
-						class="object-contain object-center w-20 h-20 bg-gray-500 rounded-full -mt-14"
+						class="object-contain object-center w-20 h-20 bg-gray-500 border border-black rounded-full -mt-14"
 					/>
 				</div>
 				<div
@@ -41,7 +41,7 @@ onMounted(fetchUserData);
 					class="pb-5 mt-4 text-center"
 				>
 					<h6 class="text-xl font-medium capitalize">{{ userData.name }}</h6>
-					<p class="text-sm font-light">QX-092023-272{{ userData.id }}</p>
+					<p class="text-sm font-medium text-gray-500">QX-092023-272{{ userData.id }}</p>
 				</div>
 			</div>
 		</div>
@@ -52,13 +52,13 @@ onMounted(fetchUserData);
 			<div
 				v-for="userData in userDataList"
 				:key="userData.id"
-				class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-slate-300"
+				class="rounded-2xl bg-card dark:bg-gray-800 py-7 px-7"
 			>
 				<div class="items-center">
-					<h6 class="flex items-center font-semibold">
+					<h6 class="flex items-center font-semibold text-white">
 						<Icon
 							name="material-symbols:person-rounded"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>Personal Information
@@ -66,19 +66,19 @@ onMounted(fetchUserData);
 				</div>
 				<div class="flex items-center mt-8">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Full Name:</p>
-					<h6 class="text-sm capitalize">{{ userData.name }}</h6>
+					<h6 class="text-sm text-white capitalize">{{ userData.name }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Email:</p>
-					<h6 class="text-sm">{{ userData.email }}</h6>
+					<h6 class="text-sm text-white">{{ userData.email }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Phone:</p>
-					<h6 class="text-sm">{{ userData.phone }}</h6>
+					<h6 class="text-sm text-white">{{ userData.phone }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Address:</p>
-					<h6 class="text-sm capitalize">
+					<h6 class="text-sm text-white capitalize">
 						{{ userData.address }}
 					</h6>
 				</div>
@@ -86,13 +86,13 @@ onMounted(fetchUserData);
 			<div
 				v-for="userData in userDataList"
 				:key="userData.id"
-				class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-slate-300"
+				class="rounded-2xl bg-card dark:bg-gray-800 py-7 px-7"
 			>
 				<div class="items-center">
-					<h6 class="flex items-center font-semibold">
+					<h6 class="flex items-center font-semibold text-white">
 						<Icon
 							name="material-symbols:person-rounded"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>
@@ -101,35 +101,35 @@ onMounted(fetchUserData);
 				</div>
 				<div class="flex items-center mt-8">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Member Since:</p>
-					<h6 class="text-sm">{{ userData.memberSince.slice(0, 10) }}</h6>
+					<h6 class="text-sm text-white">{{ userData.memberSince.slice(0, 10) }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Deparment:</p>
-					<h6 class="text-sm capitalize">{{ userData.department }}</h6>
+					<h6 class="text-sm text-white capitalize">{{ userData.department }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Employement Type:</p>
-					<h6 class="text-sm capitalize">{{ userData.employmentType }}</h6>
+					<h6 class="text-sm text-white capitalize">{{ userData.employmentType }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Shift:</p>
-					<h6 class="text-sm">{{ userData.shift }}</h6>
+					<h6 class="text-sm text-white">{{ userData.shift }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Manager:</p>
-					<h6 class="text-sm capitalize">{{ userData.manager }}</h6>
+					<h6 class="text-sm text-white capitalize">{{ userData.manager }}</h6>
 				</div>
 			</div>
 			<div
 				v-for="userData in userDataList"
 				:key="userData.id"
-				class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 py-7 px-7 shadow-slate-300"
+				class="rounded-2xl bg-card dark:bg-gray-800 py-7 px-7"
 			>
 				<div class="items-center">
-					<h6 class="flex items-center font-semibold">
+					<h6 class="flex items-center font-semibold text-white">
 						<Icon
 							name="material-symbols:credit-card"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>Benefits
@@ -137,23 +137,30 @@ onMounted(fetchUserData);
 				</div>
 				<div class="flex items-center mt-8">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Pagibig:</p>
-					<h6 class="text-sm">{{ userData.pagibig }}</h6>
+					<h6 class="text-sm text-white">{{ userData.pagibig }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">Philhealth:</p>
-					<h6 class="text-sm">{{ userData.philhealth }}</h6>
+					<h6 class="text-sm text-white">{{ userData.philhealth }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">sss-number:</p>
-					<h6 class="text-sm">{{ userData.sssNumber }}</h6>
+					<h6 class="text-sm text-white">{{ userData.sssNumber }}</h6>
 				</div>
 				<div class="flex items-center mt-5">
 					<p class="mr-2 text-xs font-bold text-gray-400 uppercase">tin:</p>
-					<h6 class="text-sm">{{ userData.tin }}</h6>
+					<h6 class="text-sm text-white">{{ userData.tin }}</h6>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.bg-card2 {
+	background-image: url("../public/bgCard2.svg");
+}
+.bg-card {
+	background-color: #334155;
+}
+</style>

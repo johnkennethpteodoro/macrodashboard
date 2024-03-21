@@ -105,7 +105,7 @@ const birthdayCelebrants = {
 	<div>
 		<Loading v-if="store.isLoading" />
 		<div
-			class="grid items-center grid-cols-6 mb-4 shadow-lg rounded-2xl xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-gray-50 dark:bg-gray-800 shadow-slate-300"
+			class="grid items-center grid-cols-6 mb-4 shadow-md rounded-2xl xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:col-span-6 sm:grid sm:grid-cols-6 bg-slate-300 dark:bg-gray-800 shadow-slate-500"
 		>
 			<div class="h-full col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2">
 				<div
@@ -124,14 +124,14 @@ const birthdayCelebrants = {
 
 					<button
 						@click="() => hanldeClickModule('attendance')"
-						class="px-5 py-2 text-white bg-red-600 rounded-full shadow-lg mt-7 shadow-slate-200"
+						class="px-5 py-2 text-white rounded-full shadow-md bg-slate-950 mt-7 shadow-slate-500"
 					>
 						Clock In
 					</button>
 				</div>
 			</div>
 			<div
-				class="h-full col-span-4 rounded-r-2xl xl:col-span-2 lg:col-span-2 md:col-span-4 to-trapezoid sm:col-span-4 bg-slate-950"
+				class="h-full col-span-4 rounded-r-2xl xl:col-span-2 lg:col-span-2 md:col-span-4 to-trapezoid sm:col-span-4 bg-card"
 			>
 				<div class="z-50 pt-5 pb-5 pr-5 text-right xl:p-8 lg:p-8 md:p-7 sm:p-5">
 					<h6
@@ -156,13 +156,13 @@ const birthdayCelebrants = {
 			class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-6 md:grid md:col-span-6 sm:grid sm:col-span-6"
 		>
 			<div
-				class="shadow-lg rounded-2xl xl:col-span-3 lg:col-span-4 md:col-span-3 bg-gray-50 dark:bg-gray-800 sm:col-span-3 shadow-slate-300"
+				class="shadow-md rounded-2xl xl:col-span-3 lg:col-span-4 md:col-span-3 bg-card1 dark:bg-gray-800 sm:col-span-3 shadow-slate-500"
 			>
 				<div class="items-center py-7 px-7">
-					<h6 class="flex items-center font-semibold">
+					<h6 class="flex items-center font-semibold text-white">
 						<Icon
 							name="material-symbols:sound-detection-loud-sound-sharp"
-							color="black"
+							color="white"
 							size="24px"
 							class="mr-2"
 						/>
@@ -176,11 +176,11 @@ const birthdayCelebrants = {
 				</div>
 			</div>
 			<div
-				class="justify-center block shadow-lg rounded-2xl xl:col-span-1 lg:col-span-2 md:col-span-3 bg-gray-50 sm:col-span-3 dark:bg-gray-800 shadow-slate-300"
+				class="justify-center block shadow-md rounded-2xl xl:col-span-1 lg:col-span-2 md:col-span-3 bg-card sm:col-span-3 dark:bg-gray-800 shadow-slate-500"
 			>
 				<div class="flex items-center px-7 py-7">
-					<Icon name="material-symbols:cake" color="black" size="24px" class="mr-5" />
-					<h6 class="font-semibold">Birthday Celebrants</h6>
+					<Icon name="material-symbols:cake" color="white" size="24px" class="mr-5" />
+					<h6 class="font-semibold text-white">Birthday Celebrants</h6>
 				</div>
 				<div class="pt-0 pb-5">
 					<div
@@ -189,11 +189,11 @@ const birthdayCelebrants = {
 						class="flex items-center py-1.5 px-7"
 					>
 						<h6
-							class="px-3 py-2 mr-4 text-xs font-bold text-white capitalize rounded-full shadow-lg bg-slate-950 shadow-slate-200"
+							class="px-3 py-2 mr-4 text-xs font-bold text-white capitalize rounded-full bg-slate-950 shadow-slate-200"
 						>
 							{{ celebrants.birthday }}
 						</h6>
-						<p class="text-gray-600 capitalize">{{ celebrants.name }}</p>
+						<p class="text-white capitalize">{{ celebrants.name }}</p>
 					</div>
 				</div>
 			</div>
@@ -205,5 +205,13 @@ const birthdayCelebrants = {
 .to-trapezoid {
 	-webkit-clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
 	clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.bg-card1 {
+	background-image: url(../public/bgCard1.svg);
+}
+
+.bg-card {
+	background-color: #334155;
 }
 </style>

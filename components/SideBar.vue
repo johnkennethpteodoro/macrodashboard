@@ -8,18 +8,19 @@ const hanldeClickModule = (value: string) => {
 </script>
 
 <template>
-	<div class="h-full overflow-y-auto shadow-lg bg-slate-950 shadow-gray-300">
+	<div class="h-full overflow-y-auto bg-card">
 		<div class="pt-5 px-7">
 			<button
 				@click="() => hanldeClickModule('dashboard')"
 				class="flex items-center w-full px-3 py-3 mb-2 text-white rounded-full"
 			>
 				<Icon
-					name="material-symbols:incomplete-circle"
+					name="material-symbols-light:circles-ext"
 					color="white"
 					size="24px"
 					class="mr-5"
 				/>
+
 				QUICKSTRIKE
 			</button>
 		</div>
@@ -86,5 +87,9 @@ const hanldeClickModule = (value: string) => {
 <style scoped>
 .active {
 	background-color: #475569;
+}
+
+.bg-card {
+	background-color: #334155;
 }
 </style>

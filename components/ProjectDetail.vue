@@ -45,7 +45,7 @@ const searchProject = computed(() => {
 	<div>
 		<div class="flex justify-between">
 			<div class="py-7">
-				<h6 class="font-semibold">Project List</h6>
+				<h6 class="font-semibold text-white">Project List</h6>
 			</div>
 			<div class="grid items-center w-80">
 				<div class="relative w-full">
@@ -56,7 +56,7 @@ const searchProject = computed(() => {
 					</div>
 					<input
 						type="text"
-						class="bg-gray-50 shadow-lg shadow-slate-300 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						class="bg-slate-300 border-2 border-slate-500 text-gray-900 text-sm rounded-full focus:ring-slate-500 focus:border-slate-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
 						placeholder="Search project name..."
 						autocomplete="off"
 						v-model="store.searchProject"
@@ -71,21 +71,23 @@ const searchProject = computed(() => {
 		<div
 			v-for="project in searchProject"
 			:key="project.id"
-			class="shadow-lg rounded-2xl bg-gray-50 dark:bg-gray-800 shadow-slate-300"
+			class="rounded-2xl bg-card5 dark:bg-gray-800 drop-shadow-lg"
 		>
-			<div class="p-5">
+			<div>
 				<NuxtImg
 					src="../public/designStudio.png"
-					class="object-cover object-center w-full h-auto border shadow-lg border-slate-300 rounded-2xl shadow-gray-100"
+					class="object-cover object-center w-full h-auto border border-slate-300 rounded-t-2xl shadow-gray-100 brightness-90"
 				/>
-				<div>
+				<div class="p-5">
 					<div class="flex justify-between mt-5">
 						<div>
-							<h6 class="text-xl font-bold capitalize">{{ project.projectName }}</h6>
+							<h6 class="text-xl font-bold text-white capitalize">
+								{{ project.projectName }}
+							</h6>
 							<p class="text-sm text-gray-400 capitalize">{{ project.status }}</p>
 						</div>
 						<div class="flex">
-							<h6 class="mr-3 font-bold">5</h6>
+							<h6 class="mr-3 font-bold text-white">5</h6>
 							<div class="flex">
 								<Icon
 									name="material-symbols:star-rounded"
@@ -116,13 +118,11 @@ const searchProject = computed(() => {
 						</div>
 					</div>
 					<div class="flex gap-2 mt-5">
-						<button
-							class="px-5 py-2 text-sm text-white bg-red-600 rounded-full shadow-lg shadow-slate-300"
-						>
+						<button class="px-5 py-2 text-sm text-white rounded-full bg-slate-950">
 							View Project
 						</button>
 						<button
-							class="px-5 py-2 text-sm text-red-600 border border-red-600 rounded-full shadow-lg shadow-slate-300"
+							class="px-5 py-2 text-sm text-white border border-white rounded-full"
 						>
 							See More
 						</button>
@@ -133,4 +133,8 @@ const searchProject = computed(() => {
 	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.bg-card5 {
+	background-image: url("../public/bgCard5.svg");
+}
+</style>
