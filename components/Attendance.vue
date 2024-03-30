@@ -115,7 +115,7 @@ const attendanceLogs = {
 						<p class="text-white">{{ totalRenderHours }}</p>
 					</div>
 					<div v-if="isOpenClockoutMsg" class="grid grid-cols-2 gap-4 mb-16">
-						<div class="p-4 border border-slate-200 rounded-xl bg-slate-50">
+						<div class="p-4 border border-black rounded-xl bg-slate-50">
 							<p
 								class="mb-1 text-sm font-semibold text-center opacity-50 xl:text-left lg:tex-left md:text-left sm:text-center text-slate-800"
 							>
@@ -145,19 +145,19 @@ const attendanceLogs = {
 								</p>
 							</div>
 						</div>
-						<div class="p-4 border border-red-200 rounded-xl bg-red-50">
+						<div class="p-4 border border-white rounded-xl bg-slate-900">
 							<p
-								class="mb-1 text-sm font-semibold text-center text-red-700 opacity-50 xl:text-left lg:tex-left md:text-left sm:text-center"
+								class="mb-1 text-sm font-semibold text-center text-white opacity-50 xl:text-left lg:tex-left md:text-left sm:text-center"
 							>
 								<Icon
 									name="material-symbols:timer-off-rounded"
-									color="red"
+									color="white"
 									size="22px"
 									class="mr-1 opacity-60"
 								/>Clock-out
 							</p>
 							<h6
-								class="mb-5 text-xl font-light text-center xl:text-left lg:tex-left md:text-left sm:text-center"
+								class="mb-5 text-xl font-light text-center text-white xl:text-left lg:tex-left md:text-left sm:text-center"
 							>
 								{{ getTimeClockOut }}
 							</h6>
@@ -177,7 +177,7 @@ const attendanceLogs = {
 							<p class="mt-2 text-sm text-white">Tap the button bellow to clock in</p>
 						</div>
 
-						<div class="mb-16">
+						<div class="mt-16 mb-8">
 							<Icon
 								name="material-symbols:keyboard-double-arrow-down-rounded"
 								color="white"
@@ -186,16 +186,22 @@ const attendanceLogs = {
 							/>
 						</div>
 					</div>
-
-					<button
-						@click="isOpenClockIn = true"
-						label="Open"
-						data-modal-target="popup-modal"
-						data-modal-toggle="popup-modal"
-						class="w-40 h-40 text-xl font-black text-black uppercase border-2 rounded-full shadow-2xl border-slate-700 drop-shadow-lg bg-slate-300 shadow-gray-500"
-					>
-						clock in
-					</button>
+					<div class="flex justify-center">
+						<div class="relative flex w-36 h-36">
+							<span
+								class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-slate-50"
+							></span>
+							<button
+								@click="isOpenClockIn = true"
+								label="Open"
+								data-modal-target="popup-modal"
+								data-modal-toggle="popup-modal"
+								class="text-xl font-black text-black uppercase border-2 rounded-full shadow-2xl w-36 h-36 border-slate-700 drop-shadow-lg bg-slate-300 shadow-gray-500"
+							>
+								clock in
+							</button>
+						</div>
+					</div>
 
 					<UModal v-model="isOpenClockIn" prevent-close>
 						<UCard
@@ -237,7 +243,7 @@ const attendanceLogs = {
 						</UCard>
 					</UModal>
 
-					<div class="mt-5">
+					<div class="mt-12">
 						<h6 class="text-xl font-semibold text-white">{{ currentDateTime.time }}</h6>
 						<p class="text-sm text-white">{{ currentDateTime.day }}</p>
 					</div>
@@ -253,7 +259,7 @@ const attendanceLogs = {
 						<p class="text-white">0:00</p>
 					</div>
 					<div class="grid grid-cols-2 gap-4 mt-3">
-						<div class="p-4 border border-slate-200 rounded-2xl bg-slate-50">
+						<div class="p-4 border border-black rounded-2xl bg-slate-50">
 							<p
 								class="mb-1 text-sm font-semibold text-center opacity-50 xl:text-left lg:tex-left md:text-left sm:text-center text-slate-800"
 							>
@@ -282,19 +288,19 @@ const attendanceLogs = {
 								</p>
 							</div>
 						</div>
-						<div class="p-4 border border-red-200 rounded-2xl bg-red-50">
+						<div class="p-4 border border-slate-200 rounded-2xl bg-slate-900">
 							<p
-								class="mb-1 text-sm font-semibold text-center text-red-700 opacity-50 xl:text-left lg:tex-left md:text-left sm:text-center"
+								class="mb-1 text-sm font-semibold text-center text-white opacity-50 xl:text-left lg:tex-left md:text-left sm:text-center"
 							>
 								<Icon
 									name="material-symbols:timer-off-rounded"
-									color="red"
+									color="white"
 									size="22px"
 									class="mr-1 opacity-60"
 								/>Clock-out
 							</p>
 							<p
-								class="text-sm text-center xl:text-left lg:text-left md:text-left sm:text-center"
+								class="text-sm text-center text-white xl:text-left lg:text-left md:text-left sm:text-center"
 							>
 								Do not forget to clock out before 5:00 PM
 							</p>
@@ -307,15 +313,22 @@ const attendanceLogs = {
 					</div>
 				</div>
 				<div class="mt-12 text-center">
-					<button
-						@click="isOpenClockOut = true"
-						label="Open"
-						data-modal-target="popup-modal"
-						data-modal-toggle="popup-modal"
-						class="w-40 h-40 text-xl font-black text-white uppercase border border-white rounded-full shadow-2xl drop-shadow-lg bg-slate-900 shadow-gray-500"
-					>
-						clock out
-					</button>
+					<div class="flex justify-center">
+						<div class="relative flex w-36 h-36">
+							<span
+								class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-slate-50"
+							></span>
+							<button
+								@click="isOpenClockOut = true"
+								label="Open"
+								data-modal-target="popup-modal"
+								data-modal-toggle="popup-modal"
+								class="text-xl font-black text-white uppercase border border-white rounded-full shadow-2xl w-36 h-36 drop-shadow-lg bg-slate-900 shadow-gray-500"
+							>
+								clock out
+							</button>
+						</div>
+					</div>
 
 					<UModal v-model="isOpenClockOut" prevent-close>
 						<UCard
@@ -357,7 +370,7 @@ const attendanceLogs = {
 						</UCard>
 					</UModal>
 
-					<div class="mt-5">
+					<div class="mt-10">
 						<h6 class="text-xl font-semibold text-white">{{ currentDateTime.time }}</h6>
 						<p class="text-sm text-white">{{ currentDateTime.day }}</p>
 					</div>
@@ -465,14 +478,14 @@ const attendanceLogs = {
 						class="text-xs text-white border-t border-b dark:bg-gray-700 dark:text-gray-400"
 					>
 						<tr>
-							<th scope="col" class="px-6 py-3">Date</th>
-							<th scope="col" class="px-6 py-3">
+							<th scope="col" class="px-6 py-4">Date</th>
+							<th scope="col" class="px-6 py-4">
 								<div class="flex items-center">Time In</div>
 							</th>
-							<th scope="col" class="px-6 py-3">
+							<th scope="col" class="px-6 py-4">
 								<div class="flex items-center">Time Out</div>
 							</th>
-							<th scope="col" class="px-6 py-3">
+							<th scope="col" class="px-6 py-4">
 								<div class="flex items-center">Time Rendered</div>
 							</th>
 						</tr>
@@ -481,7 +494,7 @@ const attendanceLogs = {
 						<tr
 							v-for="attendance in attendanceLogs"
 							:key="attendance.id"
-							class="text-white border-b dark:bg-gray-800 dark:border-gray-700"
+							class="border-t border-white dark:bg-gray-800 dark:border-gray-700"
 						>
 							<th
 								scope="row"
@@ -502,10 +515,14 @@ const attendanceLogs = {
 
 <style scoped>
 .bg-card1 {
-	background-image: url(../public/bgCard1.svg);
+	background-image: url(/bgCard1.svg);
 }
 
 .bg-card {
 	background-color: #334155;
 }
+
+/* * {
+	border: 1px solid red;
+} */
 </style>

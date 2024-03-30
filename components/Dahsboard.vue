@@ -119,7 +119,7 @@ const birthdayCelebrants = {
 						{{ userData.name.slice(0, 12) }}
 					</h6>
 					<p class="text-sm capitalize xl:text-lg lg:text-lg md:text-lg sm:text-sm">
-						software engineer
+						{{ userData.title }}
 					</p>
 
 					<button
@@ -189,7 +189,7 @@ const birthdayCelebrants = {
 						class="flex items-center py-1.5 px-7"
 					>
 						<h6
-							class="px-3 py-2 mr-4 text-xs font-bold text-white capitalize rounded-full bg-slate-950 shadow-slate-200"
+							class="px-3 py-2 mr-4 text-xs font-bold text-black capitalize rounded-full bg-slate-300 shadow-slate-200"
 						>
 							{{ celebrants.birthday }}
 						</h6>
@@ -208,7 +208,7 @@ const birthdayCelebrants = {
 }
 
 .bg-card1 {
-	background-image: url(../public/bgCard1.svg);
+	background-image: url(/bgCard1.svg);
 }
 
 .bg-card {

@@ -1,4 +1,6 @@
 <script setup>
+import { useStore } from "../stores/store";
+const store = useStore();
 const props = defineProps({
 	employeeData: Object,
 	projectData: Object,
@@ -27,6 +29,8 @@ const props = defineProps({
 			v-for="projectOverview in props.projectData"
 			:key="projectOverview.id"
 			class="flex items-center justify-center rounded-2xl bg-card dark:bg-gray-800"
+			@click="store.handleFilterProject(projectOverview.status)"
+			:class="{ activeCard: store.projectStatus === projectOverview.status }"
 		>
 			<div class="block text-center p-7">
 				<h6
@@ -43,5 +47,9 @@ const props = defineProps({
 <style scope>
 .bg-card {
 	background-color: #334155;
+}
+
+.activeCard {
+	background: #1f2a36;
 }
 </style>

@@ -158,7 +158,7 @@ onMounted(fetchUserData);
 
 <style scoped>
 .bg-card2 {
-	background-image: url("../public/bgCard2.svg");
+	background-image: url("/bgCard2.svg");
 }
 .bg-card {
 	background-color: #334155;

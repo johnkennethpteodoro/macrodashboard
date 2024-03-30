@@ -105,6 +105,75 @@ const searchEmployee = computed(() => {
 			</div>
 		</div>
 	</div>
+	<h6 class="px-5 py-2 mb-3 text-white capitalize rounded-full">admins</h6>
+	<div
+		class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-3 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1"
+	>
+		<div
+			v-for="employee in searchEmployee"
+			:key="employee.id"
+			class="rounded-2xl bg-card7 dark:bg-gray-800"
+		>
+			<div class="flex items-center p-5">
+				<div class="relative">
+					<NuxtImg
+						src="../public/profile.JPG"
+						class="object-contain object-center w-16 h-16 bg-gray-500 border border-black rounded-full"
+					/>
+					<div
+						:class="
+							employee.online
+								? 'absolute w-3 h-3 bg-green-500 rounded-full right-1 bottom-1 border border-green-600'
+								: 'absolute w-3 h-3 bg-gray-300 rounded-full right-1 bottom-1 border border-gray-400'
+						"
+					></div>
+				</div>
+
+				<div class="ml-5 text-left">
+					<h6 class="font-semibold text-white capitalize">{{ employee.name }}</h6>
+					<h6 class="text-sm text-white capitalize">
+						{{ employee.jobPosition }}
+					</h6>
+					<p class="text-sm text-gray-300">{{ employee.email }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h6 class="px-5 py-2 mb-3 text-white capitalize rounded-full">engineers</h6>
+	<div
+		class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-3 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1"
+	>
+		<div
+			v-for="employee in searchEmployee"
+			:key="employee.id"
+			class="rounded-2xl bg-card7 dark:bg-gray-800"
+		>
+			<div class="flex items-center p-5">
+				<div class="relative">
+					<NuxtImg
+						src="../public/profile.JPG"
+						class="object-contain object-center w-16 h-16 bg-gray-500 border border-black rounded-full"
+					/>
+					<div
+						:class="
+							employee.online
+								? 'absolute w-3 h-3 bg-green-500 rounded-full right-1 bottom-1 border border-green-600'
+								: 'absolute w-3 h-3 bg-gray-300 rounded-full right-1 bottom-1 border border-gray-400'
+						"
+					></div>
+				</div>
+
+				<div class="ml-5 text-left">
+					<h6 class="font-semibold text-white capitalize">{{ employee.name }}</h6>
+					<h6 class="text-sm text-white capitalize">
+						{{ employee.jobPosition }}
+					</h6>
+					<p class="text-sm text-gray-300">{{ employee.email }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h6 class="px-5 py-2 mb-3 text-white capitalize rounded-full">creatives</h6>
 	<div
 		class="grid grid-cols-1 gap-4 mb-4 xl:grid xl:grid-cols-3 md:grid md:grid-cols-2 sm:grid sm:grid-cols-1"
 	>
@@ -142,6 +211,6 @@ const searchEmployee = computed(() => {
 
 <style scoped>
 .bg-card7 {
-	background-image: url("../public/bgCard7.svg");
+	background-image: url("/bgCard7.svg");
 }
 </style>

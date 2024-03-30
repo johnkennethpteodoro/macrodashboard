@@ -5,11 +5,11 @@ const store = useStore();
 
 <template>
 	<NuxtLayout>
-		<SideBar
+		<Sidebar
 			v-if="store.isShowSidebar"
 			class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full xl:-translate-x-0 lg:-translate-x-full md:lg:-translate-x-full sm:-translate-x-full"
 		/>
-		<SidebarIconOnly
+		<SidebarSmall
 			v-else
 			class="fixed top-0 left-0 z-40 w-20 h-screen transition-transform -translate-x-full xl:-translate-x-0 lg:-translate-x-full md:lg:-translate-x-full sm:-translate-x-full"
 		/>

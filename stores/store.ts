@@ -16,6 +16,7 @@ export const useStore = defineStore({
 		isLoading: false,
 		isAuthenticated: false,
 		isShowSidebar: true,
+		projectStatus: "All",
 	}),
 	actions: {
 		handleShowModule(value: string) {
@@ -26,10 +27,17 @@ export const useStore = defineStore({
 		setAuthenticated(status: boolean) {
 			this.isAuthenticated = status;
 		},
+		handleFilterProject(value: string) {
+			console.log("🚀 ~ handleFilterProject ~ value:", value);
+			this.projectStatus = value;
+		},
 	},
 	getters: {
 		isLoggedIn(): boolean {
 			return this.isAuthenticated;
+		},
+		getProjectStatus(): string {
+			return this.projectStatus;
 		},
 	},
 });

@@ -1,24 +1,24 @@
 <script setup>
 const projectOverviewData = {
-	inProgress: {
+	all: {
 		id: 1,
-		status: "In Progress",
-		quantity: 22,
+		status: "All",
+		quantity: 4,
 	},
 	operational: {
 		id: 2,
 		status: "Operational",
-		quantity: 3,
+		quantity: 2,
 	},
 	underMaintainance: {
 		id: 3,
-		status: "Under Maintainance",
-		quantity: 45,
+		status: "Under Maintenance",
+		quantity: 2,
 	},
 	completed: {
 		id: 4,
 		status: "Completed",
-		quantity: 22,
+		quantity: 1,
 	},
 };
 </script>

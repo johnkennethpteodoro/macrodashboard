@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useStore } from "../stores/store";
 const store = useStore();
 
@@ -7,25 +7,25 @@ const projectDetail = {
 	project1: {
 		id: 1,
 		projectName: "vectorsoft",
-		status: "under maintenance",
+		status: "Under Maintenance",
 		rate: 5,
 	},
 	project2: {
 		id: 2,
 		projectName: "desgin studio",
-		status: "opearational",
+		status: "Operational",
 		rate: 5,
 	},
 	project3: {
 		id: 3,
 		projectName: "brand data import",
-		status: "inprogress",
+		status: "In Progress",
 		rate: 5,
 	},
 	project4: {
 		id: 4,
 		projectName: "qx7",
-		status: "completed",
+		status: "Completed",
 		rate: 5,
 	},
 };
@@ -35,9 +35,15 @@ const searchProject = computed(() => {
 
 	const projectsArray = Object.values(projectDetail);
 
-	return projectsArray.filter((project: any) => {
+	const filterProject = projectsArray.filter((project) => {
 		return project.projectName.toLowerCase().includes(searchKeyword);
 	});
+
+	const result = filterProject.filter((project) => {
+		return store.getProjectStatus === "All" || project.status === store.getProjectStatus;
+	});
+
+	return result;
 });
 </script>
 
@@ -76,7 +82,7 @@ const searchProject = computed(() => {
 			<div>
 				<NuxtImg
 					src="../public/designStudio.png"
-					class="object-cover object-center w-full h-auto border border-slate-300 rounded-t-2xl shadow-gray-100 brightness-90"
+					class="object-cover object-center w-full h-auto rounded-t-2xl shadow-gray-100 brightness-75"
 				/>
 				<div class="p-5">
 					<div class="flex justify-between mt-5">
@@ -135,6 +141,6 @@ const searchProject = computed(() => {
 
 <style scoped>
 .bg-card5 {
-	background-image: url("../public/bgCard5.svg");
+	background-image: url("/bgCard5.svg");
 }
 </style>

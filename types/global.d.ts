@@ -9,6 +9,7 @@ export interface Modules {
 export interface UserData {
 	id: number;
 	name: string;
+	title: string;
 	email: string;
 	password: string;
 	phone: string;
